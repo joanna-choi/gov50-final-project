@@ -1,7 +1,7 @@
 ---
-title: "Responsiveness in immigration enforcement"
-author: "Angelo Dagonel (TF)"
-description: "County-level ICE compliance under constituent preferences and electoral dynamics"
+title: "Korean Immigrant Population in Cities"
+author: "Joanna Choi"
+description: "Varying Korean immigration population in cities with liberal constitutents and views"
 output:
   distill::distill_article:
     self_contained: false
@@ -11,17 +11,13 @@ output:
 
 ## Project thoughts
 
-I am interested in exploring data related to immigration enforcement and immigration preferences. A working project with Asya Magazinnik (Massachusetts Institute of Technology) explores how county-level compliance of Sheriff's offices with ICE detainer requests relates to ideal point estimates of immigration preferences. Specifically: our project asks whether the public's immigration preferences, restrictive or accommodating, influences how local law enforcement agencies comply with bureaucratic delegation from ICE.
+In my final project, I want to explore the effect of how liberal an urban city is on the population of Korean immigrants. With many immigration policies being correlated with liberal views, I wish to investgate whether there is a relationship that exists between thee score of how liberal the constituents of a city are, and the existing Korean immigrant population. I wish to also explore the correlation between cities and liberal views. Here are the sources I will use for this exploration:
 
-To investigate this relationship, we are relying on data from three different sources:
+1. [Pew Research Center - Korean in the U.S. Fact Sheet](https://www.pewresearch.org/social-trends/fact-sheet/asian-americans-koreans-in-the-u-s/) This data provides the cities with the highest number of Korean populations in the United States which is the outcome variable.
 
-1. [Transactional Records Access Clearinghouse (TRAC)](https://trac.syr.edu/immigration/) data on detainer requests sent to county Sheriff's offices from the Department of Homeland Security's sub-agency Immigration Customs and Enforcement (ICE);
+2. [The American Political Science Review - Representation in Municipal Govenment](https://www-jstor-org.ezp-prod1.hul.harvard.edu/stable/pdf/43654395.pdf?refreqid=excelsior%3A3d20248d6bf9a85ad9e0c8f94c4d4d66&ab_segments=&origin=&acceptTC=1) This is the data that delineates the liberal score of cities in the United States which is the explanatory variable.
 
-2. [Coooperative Election Study (CES)](https://cces.gov.harvard.edu/) data on immigration policy preferences; and
-
-3. novel data of county-level Sheriff elections and electoral type--partisan or non-partisan elections, non-electoral appointment.
-
-TRAC data provides us with our outcome variable, the proportion of ICE detainer requests that are complied with; CES data provides us with our explanatory variable, public immigration policy preferences; and the Sheriff electoral data provides us with a grouping variable.
+3. [Pew Research Center - Political Polarization in the American Public](https://www.pewresearch.org/politics/2014/06/12/section-3-political-polarization-and-personal-life/) This data talks about the relationships between liberal views and urban cities which is the grouping variable.
 
 
 
