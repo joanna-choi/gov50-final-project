@@ -16,9 +16,6 @@ In my final project, I want to explore the effect of whether being a veteran of 
 1. [IPUMS - American Community Survey, 2001-2020](https://sda.usa.ipums.org/sdaweb/analysis/?dataset=all_acs_samples) This data provides data for the veteran status of Americans, whether they served in the Vietnam war or not, which is my explanatory variable. With using the veteran status, I can see whether or not they settle in cities with Asian populations, which is the outcome variable.
 
 
-```{r}
-read_csv("/Users/joannachoi/Downloads/vietnam.csv")
-```
 
 ## Proposal
 
