@@ -11,13 +11,15 @@ output:
 
 ## Project thoughts
 
-In my final project, I want to explore the effect of how liberal an urban city is on the population of Korean immigrants. With many immigration policies being correlated with liberal views, I wish to investgate whether there is a relationship that exists between thee score of how liberal the constituents of a city are, and the existing Korean immigrant population. I wish to also explore the correlation between cities and liberal views. Here are the sources I will use for this exploration:
+In my final project, I want to explore the effect of whether being a veteran of the Vietnam war or not causes individuals to live in cities with high Asian populations. With much expsure to foreigners during the Vietnam war, I wish to investigate whether that may play a role in which cities Vietnam war veterans choose to live. I wish to also explore the correlation between Vietnam war veteran status and residence in cities with the most Asian populations. Here are the sources I will use for this exploration:
 
-1. [Pew Research Center - Korean in the U.S. Fact Sheet](https://www.pewresearch.org/social-trends/fact-sheet/asian-americans-koreans-in-the-u-s/) This data provides the cities with the highest number of Korean populations in the United States which is the outcome variable.
-
-2. [The American Political Science Review - Representation in Municipal Govenment](https://www-jstor-org.ezp-prod1.hul.harvard.edu/stable/pdf/43654395.pdf?refreqid=excelsior%3A3d20248d6bf9a85ad9e0c8f94c4d4d66&ab_segments=&origin=&acceptTC=1) This is the data that delineates the liberal score of cities in the United States which is the explanatory variable.
-
-3. [Pew Research Center - Political Polarization in the American Public](https://www.pewresearch.org/politics/2014/06/12/section-3-political-polarization-and-personal-life/) This data talks about the relationships between liberal views and urban cities which is the grouping variable.
+1. [IPUMS - American Community Survey, 2001-2020](https://sda.usa.ipums.org/sdaweb/analysis/?dataset=all_acs_samples) This data provides data for the veteran status of Americans, whether they served in the Vietnam war or not, which is my explanatory variable. With using the veteran status, I can see whether or not they settle in cities with Asian populations, which is the outcome variable.
 
 
+```{r}
+read_csv("/Users/joannachoi/Downloads/vietnam.csv")
+```
 
+## Proposal
+
+My research question is: Does exposure during the Vietnam War cause veterans to gravitate towards Asian American communities? My hypothesis for this research is that veterans who have served in the Vietnam war will settle in cities more inhabited by Asian American individuals. The Vietnam war was such a vulnerable time in our history and I believe that exposure of Americans to foreigners during such a vulnerable time will bring about some sense of intimacy or relation that will cause veterans to live in areas more surrounded by immigrants, or more specifically, Asian communities. My explanatory variable of interest is the Vietnam war veteran status which is measured by whether the individual was a veteran of the Vietnam war (= 2) or not (= 0 or 1). My outcome variable of interest is the residence of Vietnam war veterans in the cities with the most individuals that identify themselves as Asian, which will be measured through population. If I observed the pattern that the population of Vietnam war veterans are the highest in the cities with the most Asian American communities, this would support my hypothesis that the exposure during the war is a factor for the observed results, relating to a positive coefficient or correlation. However, if I observed that Vietnam war veterans are equally or less seen in cities with the most American American populations, this would disprove my hypothesis, relating to a neutral or negative coefficient/relationship. 
