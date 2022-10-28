@@ -1,5 +1,5 @@
 ---
-title: "Vietnam War Veteran Population in Asian Communities"
+title: "Vietnam War Veteran Populations in Cities"
 author: "Joanna Choi"
 description: "Varying Vietnam war veteran populations in cities with the most Asian populations"
 output:
