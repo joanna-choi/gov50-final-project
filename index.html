@@ -115,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/header-attrs-2.16/header-attrs.js","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["data/DECENNIALPL2020.P1_2022-11-11T162143.zip","data/racepop/decennial.csv","data/racepop/DECENNIALPL2010.P1-Column-Metadata.csv","data/racepop/DECENNIALPL2010.P1-Table-Notes.txt","data/racepop/DECENNIALPL2020.P1-Column-Metadata.csv","data/racepop/DECENNIALPL2020.P1-Data.csv","data/racepop/DECENNIALPL2020.P1-Table-Notes.txt","data/racepopulation/DECENNIALPL2020.P1-Column-Metadata.csv","data/racepopulation/DECENNIALPL2020.P1-Table-Notes.txt","data/racepopulation/popdata.csv","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/header-attrs-2.16/header-attrs.js","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1524,7 +1524,47 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ol>
 <h2 id="proposal">Proposal</h2>
 <p>My research question is: Does exposure during the Vietnam War cause veterans to gravitate towards Asian American communities? My hypothesis for this research is that veterans who have served in the Vietnam war will settle in cities more inhabited by Asian American individuals. The Vietnam war was such a vulnerable time in our history and I believe that exposure of Americans to foreigners during such a vulnerable time will bring about some sense of intimacy or relation that will cause veterans to live in areas more surrounded by immigrants, or more specifically, Asian communities. My explanatory variable of interest is the Vietnam war veteran status which is measured by whether the individual was a veteran of the Vietnam war (= 2) or not (= 0 or 1). My outcome variable of interest is the residence of Vietnam war veterans in the cities with the most individuals that identify themselves as Asian, which will be measured through population. If I observed the pattern that the population of Vietnam war veterans are the highest in the cities with the most Asian American communities, this would support my hypothesis that the exposure during the war is a factor for the observed results, relating to a positive coefficient or correlation. However, if I observed that Vietnam war veterans are equally or less seen in cities with the most American American populations, this would disprove my hypothesis, relating to a neutral or negative coefficient/relationship.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h2 id="data-visualization">Data Visualization</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>vietnam</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"data/racepopulation/popdata.csv"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>vietnam</span></span></code></pre>
+</div>
+<pre><code># A tibble: 31,962 × 145
+   GEO_ID      NAME    P1_001N P1_00…¹ P1_002N P1_00…² P1_003N P1_00…³
+   &lt;chr&gt;       &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  
+ 1 Geography   Geogra… !!Tota… Annota… !!Tota… Annota… !!Tota… Annota…
+ 2 0400000US01 Alabama 5024279 null    4767326 null    3220452 null   
+ 3 0400000US02 Alaska  733391  null    643867  null    435392  null   
+ 4 0400000US04 Arizona 7151502 null    6154696 null    4322337 null   
+ 5 0400000US05 Arkans… 3011524 null    2797949 null    2114512 null   
+ 6 0400000US06 Califo… 395382… null    337779… null    162961… null   
+ 7 0400000US08 Colora… 5773714 null    5066044 null    4082927 null   
+ 8 0400000US09 Connec… 3605944 null    3273040 null    2395128 null   
+ 9 0400000US10 Delawa… 989948  null    913430  null    597763  null   
+10 0400000US11 Distri… 689545  null    633468  null    273194  null   
+# … with 31,952 more rows, 137 more variables: P1_004N &lt;chr&gt;,
+#   P1_004NA &lt;chr&gt;, P1_005N &lt;chr&gt;, P1_005NA &lt;chr&gt;, P1_006N &lt;chr&gt;,
+#   P1_006NA &lt;chr&gt;, P1_007N &lt;chr&gt;, P1_007NA &lt;chr&gt;, P1_008N &lt;chr&gt;,
+#   P1_008NA &lt;chr&gt;, P1_009N &lt;chr&gt;, P1_009NA &lt;chr&gt;, P1_010N &lt;chr&gt;,
+#   P1_010NA &lt;chr&gt;, P1_011N &lt;chr&gt;, P1_011NA &lt;chr&gt;, P1_012N &lt;chr&gt;,
+#   P1_012NA &lt;chr&gt;, P1_013N &lt;chr&gt;, P1_013NA &lt;chr&gt;, P1_014N &lt;chr&gt;,
+#   P1_014NA &lt;chr&gt;, P1_015N &lt;chr&gt;, P1_015NA &lt;chr&gt;, P1_016N &lt;chr&gt;, …</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>asianpopstate</span> <span class='op'>&lt;-</span> <span class='va'>vietnam</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>NAME</span>, <span class='va'>P1_006N</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span><span class='op'>(</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/desc.html'>desc</a></span><span class='op'>(</span><span class='va'>P1_006N</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/slice.html'>slice</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>NAME</span>, y <span class='op'>=</span> <span class='va'>P1_006N</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_bar</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
