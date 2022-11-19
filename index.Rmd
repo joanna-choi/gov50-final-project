@@ -52,6 +52,7 @@ asianpopstate <- vietnam |>
   arrange(desc(P1_006N)) |>
   slice(1:20) 
 
-knitr::kable(asianpopstate)
+knitr::kable(asianpopstate) 
+
 ```
 
