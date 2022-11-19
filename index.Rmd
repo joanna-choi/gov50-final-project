@@ -43,6 +43,7 @@ asianpopstate <- asianpopstate |>
   geom_bar() 
 ```
 
+<<<<<<< HEAD
 The visualization did not load for some reason but if my visualization had loaded, it would show the states with the greatest numbers of Asian population in the United States. I have tried to filter down to the top 20 states in the United States with the largest Asian populations and from there, I will be able to analyze this data and graph in comparison to the states with the largest populations of Vietnam War Veterans, to see if there is a relationship between these two variables. 
 
 ## Results
@@ -56,3 +57,6 @@ knitr::kable(asianpopstate)
 
 ```
 
+=======
+The visualization did not load for some reason but if my visualization had loaded, it would show the states with the greatest numbers of Asian population in the United States. I have tried to filter down to the top 20 states in the United States with the largest Asian populations and from there, I will be able to analyze this data and graph in comparison to the states with the largest populations of Vietnam War Veterans, to see if there is a relationship between these two variables. 
+>>>>>>> b0e9900ddad427e0c58c9ae70849818a1f291bea
