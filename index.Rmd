@@ -34,6 +34,17 @@ religion <- religion |>
                                PBORN == 2 ~ "Not Christian")) |>
   drop_na(PBORN) 
 
+kidtraitdistribution <- religion |>
+  ggplot(mapping = aes(y = KIDTRAIT1b, na.rm = TRUE)) +
+  geom_bar() +
+  ylim(0, 4) +
+  labs(x = "Count", y = "Scale of Importance of Education")
+
+kidtraitdistribution
+```
+ This research is an observational study because this information/data is a result of a survey in which I was not able to actually conduct an experiment by assigning individuals to certain groups. Explanatory variables such as religion is not something I can assign someone or a group to and therefore, I am conducting research deriving from a "natural" variable coming from the individuals themselves rather than something I manipulated or treated. However, due to this factor, there is less internal validity because I was not able to control or account for the circumstances, conditions, or possible confounding variables between the Christian parents and non-Christian parents and therefore difficult to determine causal effect. However, on the other hand, this design allows me to have greater external validity in which this survey the data comes from, covers a larger population. The specific research design in this case would be a cross-sectional design in which I am using data acquired through observing/surveying the US population in 2019 for my analysis. Looking at the graph, more parents, regardless of Christian or not, believe that it is important for their child to go to college than not because lower/smaller on the scale means that the parent views a college education as more important. 
+ 
+```{r}
 educationplot <- religion |>
   drop_na(PBORN) |>
   ggplot(mapping = aes(x = religious, y = KIDTRAIT1b, na.rm = TRUE)) +
@@ -42,10 +53,8 @@ educationplot <- religion |>
 
 educationplot
 ```
- This research is an observational study because this information/data is a result of a survey in which I was not able to actually conduct an experiment by assigning individuals to certain groups. Explanatory variables such as religion is not something I can assign someone or a group to and therefore, I am conducting research deriving from a "natural" variable coming from the individuals themselves rather than something I manipulated or treated. However, due to this factor, there is less internal validity because I was not able to control or account for the circumstances, conditions, or possible confounding variables between the Christian parents and non-Christian parents and therefore difficult to determine causal effect. However, on the other hand, this design allows me to have greater external validity in which this survey the data comes from, covers a larger population. The specific research design in this case would be a cross-sectional design in which I am using data acquired through observing/surveying the US population in 2019 for my analysis.
+Looking at the graph above, I organized the summarized my dependent variable of how important the parent views their child's college education, in relation to just the explanatory variable of whether the parent is a Christian or not. This scale of "importance of child's college education" is smaller when it is very important and as you get higher on the scale, it is less important. Therefore, taking this into account, it is observed that there is more importance placed on their child's college education if the parent is Christian compared to parents who are not Christian. However, the difference observed in the graph is very small and therefore finding the coefficient/finding statistical significance is important in searching for the relationship and there may also be other confounding variables that need to be taken into account, such as how important the parent views religion.
  
-  Looking at the graph above, I organized the summarized my dependent variable of how important the parent views their child's college education, in relation to just the explanatory variable of whether the parent is a Christian or not. This scale of "importance of child's college education" is smaller when it is very important and as you get higher on the scale, it is less important. Therefore, taking this into account, it is observed that there is more importance placed on their child's college education if the parent is Christian compared to parents who are not Christian. However, the difference observed in the graph is very small and therefore finding the coefficient/finding statistical significance is important in searching for the relationship and there may also be other confounding variables that need to be taken into account, such as how important the parent views religion.
-  
   
 ## Results
 ```{r}
