@@ -69,7 +69,7 @@ coefficients1 |>
   select(term, estimate) |>  
   knitr::kable(digits = 2)
 ```
-Looking at the table, the PBORN variable coefficient is -0.01. The coefficient is a negative value/slope and I can determine that there is a negative correlation/relationship between the parent being Christian and how important their child's college education is where the importance of their child going to college increases when the parent is Christian. However, even then, the coefficient is very small.
+Looking at the table, the PBORN variable coefficient is -0.01. The coefficient is a negative value/slope and I can determine that there is a negative correlation/relationship between the parent being Christian and how important their child's college education is where the importance of their child going to college increases when the parent is Christian. However, even then, the coefficient is very small and is far from -1 or 1, and therefore signifies a weak relationship/correlation.
 
 ```{r}
 education_importance <- religion |>
