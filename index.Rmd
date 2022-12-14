@@ -22,6 +22,7 @@ install.packages("haven")
 library("haven")
 install.packages("haven", repos = "http://cran.us.r-project.org")
 install.packages("tidyverse", repos = "http://cran.us.r-project.org")
+install.packages("modelsummary", repos = "http://cran.us.r-project.org")
 ```
 
 ```{r}
@@ -42,7 +43,11 @@ educationplot <- religion |>
 
 educationplot
 ```
-
+ This research is an observational study because this information/data is a result of a survey in which I was able to actually conduct an experiment by assigning individuals to certain groups. Explanatory variables such as religion is not something I can assign someone or a group to and therefore, I am conducting research deriving from a "natural" variable coming from the invidiuals themselves rather than something I manipulated or treated. However, due to this factor, there is less internal validity because I was not able to control or account for the circumstances, conditions, or possible confounding variables between the Christian parents and non-Christian parents group and therefore difficult to determine causal effect. However, on the other hand, this design allows me to have greater external validity in which this survey the data comes from, covers a larger population. The specific research design in this case would be a cross-sectional design in which I am using data acquired through observing/surveying the US population in 2019 for my analysis.
+  Looking at the graph above, I organized the summarized my dependent variable of how important the parent views their child's college education, in relation to just the explanatory variable of whether the parent is a Christian or not. This scale of "importance of child's college education" is smaller when it is very important and as you get higher on the scale, it is less important. Therefore, taking this into account, it is observed that there is more importance placed on their child's college education if the parent is Christian compared to parents who are not Christian. However, the difference observed in the graph is very small and therefore finding the coefficient/finding statistical significance is important in searching for the relationship and there may also be other confounding variables that need to be taken into account, such as how important the parent views religion.
+  
+  
+## Results
 ```{r}
 library(broom)
 
@@ -53,12 +58,7 @@ coefficients1 |>
   select(term, estimate) |>  
   knitr::kable(digits = 2)
 ```
- This research is an observational study because this information/data is a result of a survey in which I was able to actually conduct an experiment by assigning individuals to certain groups. Explanatory variables such as religion is not something I can assign someone or a group to and therefore, I am conducting research deriving from a "natural" variable coming from the invidiuals themselves rather than something I manipulated or treated. However, due to this factor, there is less internal validity because I was not able to control or account for the circumstances, conditions, or possible confounding variables between the Christian parents and non-Christian parents group and therefore difficult to determine causal effect. However, on the other hand, this design allows me to have greater external validity in which this survey the data comes from, covers a larger population. The specific research design in this case would be a cross-sectional design in which I am using data acquired through observing/surveying the US population in 2019 for my analysis.
-  Looking at the graph above, I organized the summarized my dependent variable of how important the parent views their child's college education, in relation to just the explanatory variable of whether the parent is a Christian or not. This scale of "importance of child's college education" is smaller when it is very important and as you get higher on the scale, it is less important. Therefore, taking this into account, it is observed that there is more importance placed on their child's college education if the parent is Christian compared to parents who are not Christian. However, the difference observed in the graph is very small and therefore finding the coefficient/finding statistical significance is important in searching for the relationship and there may also be other confounding variables that need to be taken into account, such as how important the parent views religion.
-  Looking at the table, the PBORN variable coefficient is -0.01. The coefficient is a negative value/slope and I can determine that there is a negative correlation/relationship between the parent being Christian and how important their child's college education is where the importance of their child going to college increases when the parent is Christian. However, even then, the coefficient is very small.
-  
-
-## Results
+Looking at the table, the PBORN variable coefficient is -0.01. The coefficient is a negative value/slope and I can determine that there is a negative correlation/relationship between the parent being Christian and how important their child's college education is where the importance of their child going to college increases when the parent is Christian. However, even then, the coefficient is very small.
 ```{r}
 education_importance <- religion |>
   drop_na(PBORN) |>
@@ -70,7 +70,6 @@ education_importance <- religion |>
 
 education_importance
 ```
-
 ```{r}
 coefficients2 <- lm(KIDTRAIT1b ~ PBORN + PRELIMP, data = religion)
 
@@ -79,7 +78,16 @@ coefficients2 |>
   select(term, estimate) |>  
   knitr::kable(digits = 2)
 ```
+```{r}
+coefficients2 <- lm(KIDTRAIT1b ~ PBORN + PRELIMP, data = religion)
 
-
+modelsummary::modelsummary(coefficients2,
+                           statistic = c("p = {p.value}"),
+                           gof_map = c("nobs", "r.squared", "adj.r.squared"))
+```
+     The main coefficient of interest was the estimate for PBORN which is -0.01. Because the coefficient of PRELIMP was 0, it shows that there exists a neutral relationship/association between the importance of religion and how important a parent views their child's college education (as also observed in the scatter plot). This may be because if a parent is not Christian, they are highly likely to not view religion as important in one's life. However, holding this variable of PRELIMP constant, because the neutral association has already been established, we observe no change in the PBORN coefficient as it was -0.01 in the other regression as well. Therefore implying the negative association between the parent being Christian and how important their child going to college is once again, where the importance of their child going to college increases when the parent is Christian.
+    This estimated coefficient for PBORN is not statistically significant. I found the p-value of PBORN to be p = 0.667 which is greater than the significance level when alpha equals 0.05. Therefore, given all these factors, I would not determine that the coefficient signifies a causal effect. The difference observed between the importance of a child's college education is very small between parents who are Christian and not Christian and there is no statistical significance observed for the PBORN coefficient as seen above.
+    
 
 ## Conclusion
+  I have observed that Christian parents are slightly more likely to vew their child's college education as more important than non-Christian parents but that difference is very marginal. Furthermore, after running multiple regression tests, I have observed that there is no statistical significance to signify a relationship between whether or not a parent is Christian and how important they view their child going to college. Some limitations of the study is that this data is only from 2019 which limits the data I was able to work with. The results may have differed if I was able to work with a larger range of years but that is something I can only determine through a future study. Additionally, the PBORN and PRELIMP variables are very similar in nature because PBORN records whether a parent is Christian or not and PRELIMP records how important a parent views religion. Therefore, in the future, I would try to use a different variable that has less possible correlation/similarity to the PBORN variable such as whether or not the parent went to college. 
